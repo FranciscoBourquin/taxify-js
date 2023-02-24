@@ -15,7 +15,7 @@ function pedir_taxi (calle, altura) {
         altura = parseInt(prompt("Ingrese la altura"));
     };
 
-    while (altura<4 || altura>9999 || Number.isNaN(altura)) {
+    while (altura<4 || altura>9999 || isNaN(altura)) {
         altura = parseInt(prompt("La altura ingresada es incorrecta"));
         
     };
