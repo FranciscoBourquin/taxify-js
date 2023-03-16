@@ -1,55 +1,83 @@
-// creación de variables
-alert ("Bienvenido a Taxify, tu forma segura de viajar");
+//Se crean 4 variables que mostraran los errores del programa
+let error_edad = "Lo sentimos, por cuestiones de seguridad los menores de 18 años no pueden utiliar nuestra app";
+let error_calle = "La calle ingresada es incorrecta, intenta de nuevo";
+let error_altura = "La altura ingresada es incorrecta, intenta de nuevo";
+let error_intentos = "Lo sentimos, te quedaste sin intentos. Intenta más tarde.";
 
-let calle = "";
-let altura = 0;
+//Se crea el arreglo errores
+const errores = [];
 
-// Creo la función
+//Se ingresan los mensajes de error dentro del arreglo errores
+for(let i = 0; i<4; i++) {
+    if (i === 0) {
+        errores[i] = error_edad;
+    }
+    else if (i === 1){
+        errores[i] = error_calle;
+    }
+    else if (i === 2) {
+        errores[i] = error_altura;
+    }
+    else {
+        errores[i] = error_intentos
+    }
+}
 
-function pedir_taxi(calle, altura) {
-    edad = 0; 
+//Función principal del programa, contiene 3 parámetros 
+function pedir_taxi (errores, saludar, verificar_edad) {
+    errores;
+    saludar();
+    verificar_edad(despedida, verificar_calle_origen);
+}
 
-    //Pedimos la edad
+//Funcion q da la bienvenida a la aplicación 
+function saludar (saludo=alert("Bienvenido a Taxify, tu forma segura de viajar!")) {
+    
+}
 
-    edad = parseInt(prompt("Por favor ingresá tu edad"));
+//Funcion q verifica la edad 
+function verificar_edad(despedida, verificar_calle_origen) {
+    let edad_adulto = 18;
+    let edad = prompt("Por favor ingresa tu edad");
+    
+    if (edad<edad_adulto) { //Si el usuario no es adulto (18+), tira un error y se ejecuta el primer parámetro.
+        alert(errores[0]);
+        despedida();
+    }
 
-    if (edad < 15) {
-        alert("Por cuestiones de seguridad no permitimos que menores de 15 años utilicen la aplicación");
-        alert("Gracias por confiar en Taxify.")
+    else { //Si el usuario es mayor se ejecuta el segundo parámetro
+        verificar_calle_origen();
+    }
+}
 
-    } else {
+//funcion que pide la calle y verifica que se ingrese correctamente 
+function verificar_calle_origen (p1, p2) {
+    let calle = prompt("Ingresa la calle de origen");
+    let long = calle.length
+    i = 2;
 
-            // Pedimos la calle 
-
-    calle = prompt ("Por favor ingresá la calle");
-    long = calle.length
-
-    //Validamos que sea una calle de longitud válida
-
-    while (long<4) {
+    do {
+        alert(errores[1] ` Te quedan ${i} intentos`)
         
-        alert ("La calle ingresada es incorrecta. Intentá de nuevo");
-        calle = prompt("Por favor ingresá la calle"); 
-        long = calle.length
+    } while ((calle.length<4 ||parseInt(calle)) && i>0); //Bucle que pide reingresar la calle en caso de error
+
+    if(i ===0) {
+        alert(errores[3]);
     }
-
-//Pedimos la altura y convertimos a número
-
-altura = parseInt(prompt("Por favor ingresa la altura"));
-
-while (altura>9999 || altura<0 || isNaN(altura)) {
-    
-    alert("Altura incorrecta por favor, intentá de nuevo");
-    altura = prompt("Ingresá la altura");
+    else {
+        verificar_altura(despedida, verificar_identidad);
+    }
 }
 
-alert("Buscando el móvil más cercano"); 
-alert("Tu taxi está en camino. Que tengas buen viaje!");
-alert("Gracias por confiar en Taxify.");
+function verificar_altura (despedida, verificar_identidad)
 
-}
-    }
-    
-// Llamo la función
+//funcion que verifica la identidad 
 
-pedir_taxi (calle, altura);
+function verificar_identidad (despedida, identidad_choferes)
+
+//Funcion despedida que sale de la app luego de 3 errores o al concretar el pedido de taxi
+function despedida(despedida = alert("Muchas gracias por utilizar Taxify!")) {
+
+};
+
+pedir_taxi(errores, saludar, verificar_edad);
