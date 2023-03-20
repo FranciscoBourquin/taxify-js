@@ -187,7 +187,7 @@ function verificar_identidad (despedida, choferes) {
             num = Math.round(Math.random()*10);
     } while (num>2);
 
-    if (num <=3){
+    if (num <=2){
         alert("El chofer asignado a tu viaje es " + JSON.stringify(choferes[num]));
         alert("Por cuestiones de seguridad, pedile al chofer que verifique su identidad exhibiendo su DNI antes de subir al móvil");
         despedida();
