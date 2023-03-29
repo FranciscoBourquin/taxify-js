@@ -6,3 +6,13 @@ footer {
     position: sticky;
     top: 100%;
 }
+
+span {
+    position: relative;
+}
+
+i {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 10px;
+}
