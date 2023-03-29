@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/24d57c6447.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="CSS/style.css">
-    <script defer src="js/main.js"></script>
+    <script defer src="./js/main.js"></script>
     
     <title>Taxify | Tu forma segura de viajar</title>
 </head>
@@ -16,31 +17,46 @@
         <p class="py-9 bg-black font-bold text-amber-200 text-4xl">Tu forma segura de viajar</p>
         <img class="mx-auto my-24" src="Images/taxify.jpg" alt="taxify logo">
 
-        <form class="border border-black border-8" action="#" class="form">
+        <form class="bg-black border border-black border-8" action="#" class="form">
 
-          <h1 class="inline-block my-4 bg-black font-bold
+          <h1 class="inline-block my-4 mr-4 bg-black font-bold
           text-4xl text-amber-200">Pedí tu taxi</h1>
   
           <div class="container">
   
-              <div class="container-imputs">
-                      <input class="bg-black text-amber-200" type="text" name="calle" id="calle" placeholder="Ingresá la calle de origen">
-              </div>
+              <div>
+                        <label for="calle_origen" class="text-amber-200">Origen</label> <br>
+                      <input class=" border border-8 border-amber-200 bg-black text-amber-200 font-bold" type="text" name="calle_origen" id="calle_origen" placeholder="Ingresá la calle de origen">
+                      <span id="error1"></span>
+                     </div>
+                     
   
-              <div class="container-imputs">
-                      <input class="bg-black text-amber-200" type="number" name="altura_origen" id="altura_origen" placeholder="Ingresá la altura">
-              </div>
+              <div>
+                        <label for="altura_origen" class="text-amber-200">Altura</label> <br>
+                      <input class=" border border-8 border-amber-200 bg-black text-amber-200 font-bold" type="number" name="altura_origen" id="altura_origen" placeholder="Ingresá la altura"> 
+                      <span id="error2"></span>
+                    </div>
+                    
   
-              <div class="container-imputs">
-                  <input class="bg-black text-amber-200" type="text" name="calle_destino" id="calle_destino" placeholder="Ingresá la calle de destino">
+              <div>
+                        <label for="calle_destino" class="text-amber-200">Destino</label> <br>
+                  <input class=" border border-8 border-amber-200 bg-black text-amber-200 font-bold" type="text" name="calle_destino" id="calle_destino" placeholder="Ingresá la calle de destino">
+                  <span id="error3"></span>
+                </div>
+               
+  
+  
+          <div>
+                    <label for="altura_destino" class="text-amber-200">Altura</label> <br>
+                  <input class=" border border-8 border-amber-200 bg-black text-amber-200 font-bold" type="number" name="altura_destino" id="altura_destino" placeholder="Ingresá la altura">
+                  <span id="error4"></span>
+  
           </div>
   
-          <div class="container-imputs">
-                  <input class="bg-black text-amber-200" type="number" name="altura_destino" id="altura_destino" placeholder="Ingresá la altura">
+              <button class="bg-black mb-4 mt-2 text-amber-200 border border-4 border-amber-400" type="submit" id="boton" value="Buscar-móvil">Buscar móvil</button>
+              <span id="choferes"></span>
           </div>
-  
-              <button class="bg-black mb-4 text-amber-200" type="submit" value="Buscar-móvil">Buscar móvil</button>
-          </div>
+
   
       </form>
    </main>
