@@ -66,19 +66,64 @@ function validar_altura (p) {
     }
 };
 
+function asignar_chofer () {
+    //Se crea una clase que servirá de molde para los objetos que se creen posteriormente 
+const chofer = class chofer {
+    constructor (apellido, nombre, edad, DNI) {
+        this.apellido = apellido;
+        this.nombre = nombre;
+        this.edad = edad;
+        this.DNI = DNI; 
+       }
+}
+
+//Se crean los objetos utilizando la clase chofer
+let chofer1 = new chofer("Gonzales", "Fernando", "29 años", "37.345.237");
+let chofer2 = new chofer("Fernandez", "Adrián", "70 años", "5.673.225");
+let chofer3 = new chofer("Andrade", "Gabriel", "33 años", "34.825.322");
+
+//Se crea el arreglo conductores que tendrá los distintos objetos creados 
+const conductores = [chofer1, chofer2, chofer3];
+
+//Se crea una variable que arroje un número aleatorio y se entra en un bucle si el número es mayor a 2
+let num = Math.round(Math.random()*10);
+while (num>2) {
+            num = Math.round(Math.random()*10);
+    };
+
+    alert("El chofer asignado a tu viaje es " + JSON.stringify(conductores[num]));
+    alert("Por cuestiones de seguridad pedile al chofer que te muestre alguna identificación que valide su identidad antes de ingresar al móvil");
+
+}
+
+
 //creamos los eventos 
-calle1.addEventListener('change', ()=> {
+calle1.addEventListener("change", ()=> {
     validar_calle(calle1)
 });
 
-calle2.addEventListener('change', ()=> {
+calle2.addEventListener("change", ()=> {
     validar_calle(calle2)
 });
 
-altura1.addEventListener('change', ()=> {
+altura1.addEventListener("change", ()=> {
     validar_altura(altura1)
 });
 
-altura2.addEventListener('change', ()=> {
+altura2.addEventListener("change", ()=> {
     validar_altura(altura2)
 });
+
+btn.addEventListener("click", (evento)=>{
+    if (calle1.value === ""|| calle2.value ===""|| altura1.value ===""|| altura2.value === "") {
+        evento.preventDefault();
+
+        choferes.innerHTML = '<br> <p class= "inline-block bg-red-600 text-white font-bold">Debes completar todos los campos para poder pedir tu taxi</p>'
+        setTimeout(()=>{
+            choferes.innerHTML= ""
+        },3000);
+    } else {
+        asignar_chofer();
+        
+    }
+})
