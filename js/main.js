@@ -1,5 +1,5 @@
-//Creamos constantes que traen info del DOM
-const calle1 = document.getElementById("calle_origen"),
+//Creamos variables que traen info del DOM
+let calle1 = document.getElementById("calle_origen"),
 error1 = document.getElementById("error1"),
 altura1 = document.getElementById("altura_origen"),
 error2 = document.getElementById("error2"),
@@ -42,7 +42,7 @@ function validar_calle (p) {
 
 function validar_altura (p) {
     if (p === altura1) { //Si el parámetro es altura1
-        if (altura1.value<10) {
+        if (isNaN(altura1.value)  || altura1.value<10) {
             error2.innerHTML+= '<br> <p class="inline-block bg-red-600 text-white font-bold">La altura ingresada es incorrecta</p>'
             altura1.addEventListener("focus", ()=> {
             error2.innerHTML = "";
@@ -54,7 +54,7 @@ function validar_altura (p) {
     
     } 
     else {
-        if (altura2.value <10) {
+        if (isNaN(altura2.value)  || altura2.value<10) {
             error4.innerHTML+= '<br> <p class="inline-block bg-red-600 text-white font-bold">La altura ingresada es incorrecta</p>';
             altura2.addEventListener("focus", ()=> {
             error4.innerHTML = "";
@@ -119,11 +119,11 @@ btn.addEventListener("click", (evento)=>{
         evento.preventDefault();
 
         choferes.innerHTML = '<br> <p class= "inline-block bg-red-600 text-white font-bold">Debes completar todos los campos para poder pedir tu taxi</p>'
-        setTimeout(()=>{
-            choferes.innerHTML= ""
-        },3000);
+       btn.addEventListener("blur", ()=> {
+        choferes.innerHTML= "";
+       })
     } else {
         asignar_chofer();
         
     }
-})
+});
