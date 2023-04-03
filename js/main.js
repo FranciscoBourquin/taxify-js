@@ -14,21 +14,20 @@ choferes = document.getElementById("choferes");
 
 //La función valida ambas calles
 function validar_calle (calle, error) {
-    if (parseInt(calle)<10|| isNaN(calle)) {
+    if (calle.value.length<4|| parseInt(calle.value)) {
         error.innerHTML= '<br> <p class= "inline-block bg-red-600 text-white font-bold">La calle ingresada es incorrecta</p>' 
         calle.addEventListener("focus", ()=> {
             error.innerHTML= "";
         })
     } else {
-        
+        error.innerHTML+= '<i class="fa-solid fa-circle-check fa-xl" style="color: #55ca58;"></i>'
     }
 }
 
 
 function validar_altura (altura, error) {
-    if (parseInt(altura)<10|| isNaN(altura)) {
+    if (parseInt(altura.value)<10|| isNaN(altura.value)) {
         error.innerHTML= '<br> <p class= "inline-block bg-red-600 text-white font-bold">La altura ingresada es incorrecta</p>';
-        error.innerHTML= '<br> <p class= "inline-block bg-red-600 text-white font-bold">La calle ingresada es incorrecta</p>' 
         altura.addEventListener("focus", ()=> {
         error.innerHTML= "";
     })} 
