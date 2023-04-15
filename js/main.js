@@ -65,9 +65,6 @@ while (num>2) {
     alert("El chofer asignado a tu viaje es " + JSON.stringify(conductores[num]));
     alert("Por cuestiones de seguridad pedile al chofer que te muestre alguna identificación que valide su identidad antes de ingresar al móvil");}
 
-
-
-
 //creamos los eventos 
 calle1.addEventListener("change", ()=> {
     validar_calle(calle1, error1)
