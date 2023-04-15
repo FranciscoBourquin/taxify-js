@@ -3,66 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/24d57c6447.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/style2.css">
+    <script defer src="./js/login.js"></script>
     <script defer src="./js/main.js"></script>
-    
-    <title>Taxify | Tu forma segura de viajar</title>
+    <title id="titulo">Login | Taxify</title>
 </head>
-<body class="bg-yellow-300">
-   <main class="container-fluid text-center">
-        <h1 class="bg-black text-amber-200 text-8xl">Bienvenido a Taxify</h1>
-        <p class="py-9 bg-black font-bold text-amber-200 text-4xl">Tu forma segura de viajar</p>
-        <img class="mx-auto my-24" src="Images/taxify.jpg" alt="taxify logo">
+<body>
+    <header>
+        <h1 class="text-8xl">Bienvenido a Taxify</h1>
+        <h2 class="text-4xl pt-8">Tu forma segura de viajar</h2>
+        
+    </header>
+    <main>
+        <img class="mx-auto" src="Images/taxify.jpg" alt="taxify logo" id="logo">
+        <form action="#" id="login">
+            <div class="text-xl" >
+                <label for="user">user</label>
+                <input type="text" placeholder="Ingresar usuario" id="user">
+                <span id="error_user"></span>
+                <br>
+                <label for="pass">pass</label>
+                <input type="text" placeholder="ingresar contraseña" id="pass">
+                <span id="error_pass"></span>
+                <br>
+                <label for="recordar">recordarme</label>
+                <input type="checkbox" name="recordar" id="recordar">
+                <br>
+                <button id="boton_login">Iniciar Sesión</button>
+                <span id="error_boton"></span>
+            </div>
+        </form>
 
-        <form class="bg-black border border-black border-8" action="#" class="form">
+        <form class="hidden bg-black border border-black border-8" action="#" id="taxi">
 
-          <h1 class="inline-block my-4 mr-4 bg-black font-bold
-          text-4xl text-amber-200">Pedí tu taxi</h1>
-  
-          <div class="container">
-  
-              <div>
-                        <label for="calle_origen" class="text-amber-200">Origen</label> <br>
-                      <input class="border border-8 border-amber-200 bg-black text-amber-200 font-bold" type="text" name="calle_origen" id="calle_origen" placeholder="Ingresá la calle de origen">
-                      <span id="error1"></span>
-                     </div>
-                     
-  
-              <div>
-                        <label for="altura_origen" class="text-amber-200">Altura</label> <br>
-                      <input class=" border border-8 border-amber-200 bg-black text-amber-200 font-bold" type="text" name="altura_origen" id="altura_origen" placeholder="Ingresá la altura"> 
-                      <span id="error2"></span>
-                    </div>
-                    
-  
-              <div>
-                        <label for="calle_destino" class="text-amber-200">Destino</label> <br>
-                  <input class=" border border-8 border-amber-200 bg-black text-amber-200 font-bold" type="text" name="calle_destino" id="calle_destino" placeholder="Ingresá la calle de destino">
-                  <span id="error3"></span>
-                </div>
-               
-  
-  
-          <div>
-                    <label for="altura_destino" class="text-amber-200">Altura</label> <br>
-                  <input class=" border border-8 border-amber-200 bg-black text-amber-200 font-bold" type="text" name="altura_destino" id="altura_destino" placeholder="Ingresá la altura">
-                  <span id="error4"></span>
-  
-          </div>
-  
-              <button class="bg-black mb-4 mt-2 text-amber-200 border border-4 border-amber-400" type="submit" id="boton" value="Buscar-móvil">Buscar móvil</button>
-              <span id="choferes"></span>
-          </div>
-
-  
-      </form>
-   </main>
-
-   <footer class="mt-4 container-fluid text-center bg-black">
-        <p class="font-bold text-amber-200">© Taxify 2020-2023</p> 
-   </footer>
+            <h1 class="inline-block my-4 mr-4 bg-black font-bold
+            text-4xl text-amber-200">Pedí tu taxi</h1>
+    
+            <div class="container">
+    
+                <div>
+                          <label for="calle_origen" class="text-amber-200">Origen</label> <br>
+                        <input class="border border-8 border-amber-200 bg-black text-amber-200 font-bold" type="text" name="calle_origen" id="calle_origen" placeholder="Ingresá la calle de origen">
+                        <span id="error1"></span>
+                       </div>
+                       
+    
+                <div>
+                          <label for="altura_origen" class="text-amber-200">Altura</label> <br>
+                        <input class=" border border-8 border-amber-200 bg-black text-amber-200 font-bold" type="text" name="altura_origen" id="altura_origen" placeholder="Ingresá la altura"> 
+                        <span id="error2"></span>
+                      </div>
+                      
+    
+                <div>
+                          <label for="calle_destino" class="text-amber-200">Destino</label> <br>
+                    <input class=" border border-8 border-amber-200 bg-black text-amber-200 font-bold" type="text" name="calle_destino" id="calle_destino" placeholder="Ingresá la calle de destino">
+                    <span id="error3"></span>
+                  </div>
+                 
+    
+    
+            <div>
+                      <label for="altura_destino" class="text-amber-200">Altura</label> <br>
+                    <input class=" border border-8 border-amber-200 bg-black text-amber-200 font-bold" type="text" name="altura_destino" id="altura_destino" placeholder="Ingresá la altura">
+                    <span id="error4"></span>
+    
+            </div>
+    
+                <button class="bg-black mb-4 mt-2 text-amber-200 border border-4 border-amber-400" type="submit" id="boton" value="Buscar-móvil">Buscar móvil</button>
+                <span id="choferes"></span>
+            </div>
+    </main>
+    <footer>
+        <p>© Taxify 2020-2023</p>
+    </footer>
 </body>
 </html>
